@@ -1,0 +1,352 @@
+/*
+ *
+ * Common
+ *
+ *
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px "Trebuchet MS", Helvetica, sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 8px;
+  background-color: #EAE7DC;
+  color: #8E8D8A;
+}
+
+.base-color {
+  color: #EAE7DC;
+}
+
+.color-theme-1 {
+  color: #D8C3A5;
+}
+
+.color-theme-2 {
+  color: #8E8D8A;
+}
+
+.accent-color-1 {
+  color: #E98074;
+}
+
+.accent-color-2 {
+  color: #E85A4F;
+}
+
+/*
+ *
+ * Header
+ *
+ *
+*/
+
+.login-link {
+  text-align: right;
+  font-style: italic;
+}
+
+.header-text {
+  font-size: 1.55em;
+}
+
+hr {
+  border-width: 1px;
+  border-style: solid;
+}
+
+@media screen and (min-width: 550px) {
+  .header-text {
+    font-size: 2.75em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .header-text {
+    font-size: 3.25em;
+  }
+}
+
+/*
+ *
+ * Body
+ *
+ *
+*/
+main {
+  margin: 5px;
+}
+
+h3 {
+  color: #E85A4F;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+ *
+ * Flash Message
+ *
+ *
+*/
+
+.flash {
+  background: #D8C3A5;
+}
+
+.flash ul {
+  padding: 0.5em;
+}
+
+.flash li {
+  list-style-type: none;
+}
+
+/*
+ *
+ * Links
+ *
+ *
+*/
+
+.create-link,
+.menu-link,
+.modify-link,
+.cancel-link,
+li {
+  line-height: 2em;
+}
+
+/*
+ *
+ * Restaurant Actions Section
+ *
+ *
+*/
+
+.restaurant-actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.restaurant-actions .create-block,
+.search-form {
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-button {
+  margin: auto;
+}
+
+@media screen and (min-width: 550px) {
+  .restaurant-actions .create-block,
+  .restaurant-actions .search-form {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .restaurant-actions {
+    margin-bottom: 0;
+  }
+ }
+
+@media screen and (min-width: 900px) {
+  .restaurant-actions .create-block {
+    width: 60%;
+  }
+
+  .restaurant-actions .search-form {
+    width: 40%;
+  }
+}
+
+/*
+ *
+ * Texts
+ *
+ *
+*/
+.restaurant-list, .food-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.restaurant-group,
+.menu-item-group,
+.details-group,
+.search-group {
+  border: 1px solid #D8C3A5;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 0.5em;
+}
+
+.restaurant-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.restaurant-group:hover {
+  background-color: lightyellow;
+}
+
+.menu-item-group {
+  width: 100%;
+}
+
+.restaurant-name {
+  font-size: 1.25em;
+  width: 100%;
+}
+
+.restaurant-address {
+  font-size: 0.75em;
+}
+
+.name-price-group {
+  font-size: 1.25em;
+}
+
+.name {
+  width: 80%;
+  display: inline-block;
+  float: left;
+}
+
+.price {
+  text-align: right;
+  width: 20%;
+  float: right;
+}
+
+.menu-link {
+  width: 100%;
+}
+
+.description {
+  clear: both;
+}
+
+input[type=text],
+select,
+.details-group textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #D8C3A5;
+  border-radius: 4px;
+  font: inherit;
+  color: inherit;
+}
+
+.details-group textarea {
+  height: 4.5em;
+}
+
+.creator-name {
+  font-style: italic;
+}
+
+@media screen and (min-width: 450px) {
+  .menu-link {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .restaurant-name {
+    width: 60%;
+  }
+
+  .menu-link {
+    width: 20%;
+    text-align: right;
+    margin-top: 1em;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .restaurant-list,
+  .food-list {
+    padding: 5px;
+  }
+
+  .restaurant-group,
+  .menu-item-group {
+    width: 48%;
+    margin: 5px;
+  }
+
+  .restaurant-name,
+  .menu-link {
+    width: 100%;
+    text-align: left;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .restaurant-group,
+  .menu-item-group {
+    width: 32%;
+  }
+}
+
+/*
+*
+* Buttons
+*
+*
+*/
+
+.create-button,
+.save-button,
+.delete-button,
+.search-button {
+  border-radius: 5px;
+  border-color: #D8C3A5;
+  background-color: #EAE7DC;
+  line-height: 2em;
+}
+
+/*
+*
+* Search Page
+*
+*
+*/
+
+.where-served {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/*
+*
+* Body styling for responsiveness
+*
+*
+*/
+
+@media screen and (min-width: 900px) {
+  body {
+    width: 900px;
+    margin: auto;
+  }
+}

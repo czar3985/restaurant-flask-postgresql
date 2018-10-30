@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2>{{restaurant.name}}</h2>
+<p>{{restaurant.address}}</p>
+
+<div class="flash">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li><strong>{{message}}</strong></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+</div>
+
+{% block restaurant_edit_block %}
+{% endblock %}
+
+{% if courseList %}
+
+{% block menu_edit_block %}
+{% for course in courseList %}
+<h3>{{course}}</h3>
+
+<div class="food-list">
+  {% for menuItem in menuItems %}
+  {% if menuItem.course == course %}
+  <div class="menu-item-group">
+    <div class="name-price-group">
+      <span class="name"><p>{{menuItem.name}}</p></span>
+      <span class="price"><p>{{menuItem.price}}</p></span>
+    </div>
+    <div class="description">
+      <p class="color-theme-2">{{menuItem.description}}</p>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+<br />
+{% endfor %}
+{% endblock %}
+
+{% endif %}
+
+<p class="creator-name">Restaurant and menu details provided by {{creator.name}}</p>
+
+<a class="accent-color-1" href="{{url_for('showRestaurants')}}">Back to restaurants list</a>
+
+{% endblock %}

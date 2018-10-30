@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2>{{restaurantName}}</h2>
+<p>{{menuItem.restaurant.address}}</p>
+<h3>Edit menu item</h3>
+
+<form action="{{url_for('editMenuItem', restaurant_id = menuItem.restaurant_id, menu_id = menuItem.id )}}" method='POST'>
+  <div class="details-group">
+    <label for="name">Name</label>
+    <input type='text' id="name" name='name' value="{{menuItem.name}}" required>
+
+    <label for="price">Price</label>
+    <input type='text' id="price" name='price' value="{{menuItem.price}}" required>
+
+    <label for="description">Description</label>
+    <textarea id="description" name='description'>{{menuItem.description}}</textarea>
+
+    <label for="course">Course</label>
+    <input type='text' id="course" name='course' value="{{menuItem.course}}" required>
+
+  </div>
+
+  <input class="save-button accent-color-2" type='submit' value='Save'>
+</form>
+
+<a class="cancel-link accent-color-1" href="{{url_for('showMenu', restaurant_id = menuItem.restaurant_id)}}">Cancel</a>
+
+{% endblock %}

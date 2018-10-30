@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h2>{{restaurant.name}}</h2>
+<p>{{restaurant.address}}</p>
+<h3>Are you sure you want to delete this restaurant?</h3>
+
+<form action="{{url_for('deleteRestaurant', restaurant_id = restaurant.id)}}" method='POST'>
+  <input class="delete-button accent-color-2" type='submit' value='Delete'>
+</form>
+
+<a class="cancel-link accent-color-1" href="{{url_for('showRestaurants')}}">Cancel</a>
+
+{% endblock %}
